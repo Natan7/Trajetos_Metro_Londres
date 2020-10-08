@@ -1,0 +1,26 @@
+1 1
+2 2
+3 3
+4 4
+5 5
+6 6
+7 7
+8 8
+9 9
+10 10
+11 11
+12 12
+13 13
+#
+1 2 [c] first_condition. second_condition
+2 3 [s] Usuário do sistema Usuário seleciona a opção 1
+3 4 [e] system Espera usuário informar estação de origem
+4 5 [s] Usuário do sistema Usuário informa estação de origem
+5 6 [e] system Espera usuário informar estação de destino
+6 7 [s] Usuário do sistema Usuário informa estação de destino
+7 8 [e] system Espera usuário informar quantidade de trajetos
+8 9 [s] Usuário do sistema Usuário informa a quantidade de trajetos
+9 10 [e] system Espera usuário informar se deseja ou não excluir linha
+10 11 [s] Usuário do sistema Usuário informa com 'S' ou 'N'
+11 12 [e] system Imprime os trajetos disponíveis, com a quantidade de trajetos que foi especificada pelo usuário
+12 13 [c] Imprime trajetos. other condition
