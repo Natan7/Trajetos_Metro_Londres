@@ -23,6 +23,8 @@
 23 23
 24 24
 25 25
+26 26
+27 27
 #
 1 14 conditions
 14 2 first_condition. second_condition
@@ -48,3 +50,7 @@
 24 12 system Imprime os trajetos disponíveis, com a quantidade de trajetos que foi especificada pelo usuário
 12 25 conditions
 25 13 Imprime trajetos. other condition
+5 26 expected_results
+26 4 system Imprime novamente, uma messagem solicitando que o usuário informe a estação
+7 27 expected_results
+27 4 system Imprime novamente, uma messagem solicitando que o usuário informe a estação

@@ -137,4 +137,16 @@ edge
   target 13
   label "[c] Imprime trajetos. other condition"
 ]
+edge
+[
+  source 5
+  target 4
+  label "[e] system Imprime novamente, uma messagem solicitando que o usuário informe a estação"
+]
+edge
+[
+  source 7
+  target 4
+  label "[e] system Imprime novamente, uma messagem solicitando que o usuário informe a estação"
+]
 ]

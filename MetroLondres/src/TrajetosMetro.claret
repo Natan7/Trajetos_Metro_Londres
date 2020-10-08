@@ -10,9 +10,9 @@ usecase "Consulta de Trajetos" {
     step 1 usersystem "Usuário seleciona a opção 1"
     step 2 system "Espera usuário informar estação de origem"
     step 3 usersystem "Usuário informa estação de origem"
-    step 4 system "Espera usuário informar estação de destino"
+    step 4 system "Espera usuário informar estação de destino" ef[1]
     step 5 usersystem "Usuário informa estação de destino"
-    step 6 system "Espera usuário informar quantidade de trajetos"
+    step 6 system "Espera usuário informar quantidade de trajetos" ef[2]
     step 7 usersystem "Usuário informa a quantidade de trajetos"
     
     step 8 system "Espera usuário informar se deseja ou não excluir linha"
@@ -21,9 +21,13 @@ usecase "Consulta de Trajetos" {
     
   }
   
-  // Alternatives scenarios here...
+  exception 1 "Usuário informa estação de origem inexistente" {  
+	step 1 system "Imprime novamente, uma messagem solicitando que o usuário informe a estação" bs 3
+  }
   
-  // Exceptions scenarios here...
+  exception 2 "Usuário informa estação de destino inexistente" {  
+	step 1 system "Imprime novamente, uma messagem solicitando que o usuário informe a estação" bs 3
+  }
   
   postCondition "Imprime trajetos", "other condition"
 }

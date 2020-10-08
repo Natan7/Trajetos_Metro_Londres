@@ -24,3 +24,5 @@
 10 11 [s] Usuário do sistema Usuário informa com 'S' ou 'N'
 11 12 [e] system Imprime os trajetos disponíveis, com a quantidade de trajetos que foi especificada pelo usuário
 12 13 [c] Imprime trajetos. other condition
+5 4 [e] system Imprime novamente, uma messagem solicitando que o usuário informe a estação
+7 4 [e] system Imprime novamente, uma messagem solicitando que o usuário informe a estação
