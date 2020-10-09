@@ -157,7 +157,7 @@ edge
 [
   source 5
   target 3
-  label "[e] system Não faz nada"
+  label "[e] system Não faz nada 1"
 ]
 edge
 [
@@ -169,7 +169,7 @@ edge
 [
   source 7
   target 5
-  label "[e] system Não faz nada"
+  label "[e] system Não faz nada 2"
 ]
 edge
 [
@@ -181,7 +181,7 @@ edge
 [
   source 9
   target 7
-  label "[e] system Não faz nada"
+  label "[e] system Não faz nada 3"
 ]
 edge
 [

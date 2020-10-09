@@ -64,15 +64,15 @@
 3 28 expected_results
 28 13 system Volta para o menu principal
 5 29 expected_results
-29 3 system Não faz nada
+29 3 system Não faz nada 1
 5 30 expected_results
 30 13 system Volta para o menu principal
 7 31 expected_results
-31 5 system Não faz nada
+31 5 system Não faz nada 2
 7 32 expected_results
 32 13 system Volta para o menu principal
 9 33 expected_results
-33 7 system Não faz nada
+33 7 system Não faz nada 3
 9 34 expected_results
 34 13 system Volta para o menu principal
 10 35 steps

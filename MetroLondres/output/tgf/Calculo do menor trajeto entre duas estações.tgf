@@ -27,11 +27,11 @@
 11 12 [e] system Gera n menores trajetos
 12 13 [c] Lista com os n menores trajetos possíveis com base na origem e no destino
 3 13 [e] system Volta para o menu principal
-5 3 [e] system Não faz nada
+5 3 [e] system Não faz nada 1
 5 13 [e] system Volta para o menu principal
-7 5 [e] system Não faz nada
+7 5 [e] system Não faz nada 2
 7 13 [e] system Volta para o menu principal
-9 7 [e] system Não faz nada
+9 7 [e] system Não faz nada 3
 9 13 [e] system Volta para o menu principal
 10 14 [s] Usuário do Metro Digita S
 14 15 [e] system Pergunta qual a linha que deseja excluir

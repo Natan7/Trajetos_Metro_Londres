@@ -1,6 +1,6 @@
-systemName "TragetosMetro"
+systemName "TrajetosMetro"
 
-maxTestCaseSize 1
+maxTestCaseSize 2
 
 usecase "Calculo do menor trajeto entre duas estações" {
   version "0.1" type "Busca" user "Nicacio" date "08/10/2020"
@@ -28,15 +28,15 @@ usecase "Calculo do menor trajeto entre duas estações" {
   }
   
   exception 1 "A estação de origem não existe" {
-  	step 1 system "Não faz nada" bs 2
+  	step 1 system "Não faz nada 1" bs 2
   }
   
   exception 2 "A estação de destino não existe" {
-  	step 1 system "Não faz nada" bs 4
+  	step 1 system "Não faz nada 2" bs 4
   }
   
   exception 3 "A entrada não é apenas constituida por números" {
-  	step 1 system "Não faz nada" bs 6
+  	step 1 system "Não faz nada 3" bs 6
   }
   
   exception 4 "Usuário cancelou a operação" {
