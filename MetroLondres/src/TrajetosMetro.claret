@@ -21,17 +21,17 @@ usecase "Calculo do menor trajeto entre duas estações" {
     step 10 system "Gera n menores trajetos"
   }
   
-  alternative 1 "Deseja escluir uma linha" {
+  alternative 1 "Deseja excluir uma linha" {
   	step 1 usuarioDoMetro "Digita S"
   	step 2 system "Pergunta qual a linha que deseja excluir" ef[4]
   	step 3 usuarioDoMetro "Insere a linha que deseja excluir" bs 10
   }
   
-  exception 1 "A estação de destino não existe" {
+  exception 1 "A estação de origem não existe" {
   	step 1 system "Não faz nada" bs 2
   }
   
-  exception 2 "A estação de origem não existe" {
+  exception 2 "A estação de destino não existe" {
   	step 1 system "Não faz nada" bs 4
   }
   
