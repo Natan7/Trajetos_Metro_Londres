@@ -1,34 +1,48 @@
-systemName "Trajetos Metro Londres"
+systemName "TragetosMetro"
 
-usecase "Consulta de Trajetos" {
-  version "0.1" type "Consulta" user "set_user" date "08/10/2020"
-  actor usersystem "Usu√°rio do sistema"
+maxTestCaseSize 1
+
+usecase "Calculo do menor trajeto entre duas estaÁıes" {
+  version "0.1" type "Busca" user "Nicacio" date "08/10/2020"
+  actor usuarioDoMetro "Usu·rio do Metro"
   
-  preCondition "first_condition", "second_condition"
+  preCondition "Saber preveamente a origem e o destino"
   
   basic {
-    step 1 usersystem "Usu√°rio seleciona a op√ß√£o 1"
-    step 2 system "Espera usu√°rio informar esta√ß√£o de origem"
-    step 3 usersystem "Usu√°rio informa esta√ß√£o de origem"
-    step 4 system "Espera usu√°rio informar esta√ß√£o de destino" ef[1]
-    step 5 usersystem "Usu√°rio informa esta√ß√£o de destino"
-    step 6 system "Espera usu√°rio informar quantidade de trajetos" ef[2]
-    step 7 usersystem "Usu√°rio informa a quantidade de trajetos"
-    
-    step 8 system "Espera usu√°rio informar se deseja ou n√£o excluir linha"
-    step 9 usersystem "Usu√°rio informa com 'S' ou 'N'"
-    step 10 system "Imprime os trajetos dispon√≠veis, com a quantidade de trajetos que foi especificada pelo usu√°rio"
-    
+    step 1 usuarioDoMetro "Escolhe a opÁ„o 1"
+    step 2 system "Pede para informar a estaÁ„o de origem" ef[4]
+    step 3 usuarioDoMetro "Insere a estaÁ„o de origem"
+    step 4 system "Pede para informar a estaÁ„o de destino" ef[1, 4]
+    step 5 usuarioDoMetro "Insere a estaÁ„o de destino"
+    step 6 system "Pede a quantidade de trajetos" ef[2, 4]
+    step 7 usuarioDoMetro "Insere a quantidade de trajetos"
+    step 8 system "Pergunta se quer excluir alguma linha do trajeto" ef[3, 4]
+    step 9 usuarioDoMetro "Responde se deseja ou n„o alguma linha" af[1]
+    step 10 system "Gera n menores trajetos"
   }
   
-  exception 1 "Usu√°rio informa esta√ß√£o de origem inexistente" {  
-	step 1 system "Imprime novamente, uma messagem solicitando que o usu√°rio informe a esta√ß√£o" bs 3
+  alternative 1 "Deseja escluir uma linha" {
+  	step 1 usuarioDoMetro "Digita S"
+  	step 2 system "Pergunta qual a linha que deseja excluir" ef[4]
+  	step 3 usuarioDoMetro "Insere a linha que deseja excluir" bs 10
   }
   
-  exception 2 "Usu√°rio informa esta√ß√£o de destino inexistente" {  
-	step 1 system "Imprime novamente, uma messagem solicitando que o usu√°rio informe a esta√ß√£o" bs 3
+  exception 1 "A estaÁ„o de destino n„o existe" {
+  	step 1 system "N„o faz nada" bs 2
   }
   
-  postCondition "Imprime trajetos", "other condition"
+  exception 2 "A estaÁ„o de origem n„o existe" {
+  	step 1 system "N„o faz nada" bs 4
+  }
+  
+  exception 3 "A entrada n„o È apenas constituida por n˙meros" {
+  	step 1 system "N„o faz nada" bs 6
+  }
+  
+  exception 4 "Usu·rio cancelou a operaÁ„o" {
+  	step 1 system "Volta para o menu principal"
+  }
+  
+  postCondition "Lista com os n menores trajetos possÌveis com base na origem e no destino"
 }
 
