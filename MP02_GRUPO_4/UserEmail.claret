@@ -1,0 +1,37 @@
+systemName "Email"
+
+maxTestCaseSize 5
+
+usecase "Sending Email" {
+  version "0.1" type "Creation" user "Nicacio" date "08/10/2020"
+  actor emailUser "Email User"
+  
+  preCondition "There is active network connection and user is logged in"
+  
+  basic {
+    step 1 emailUser "clicks the compose button" af[1]
+    step 2 system "presents a form with recipient, subject and text field and send and discard button"
+    step 3 emailUser "fills out the fields and click on the send button" af[2]
+    step 4 system "informs that message was sent successfully" ef[1,2,3]
+  }
+  
+  alternative 1 "Recovery message from draft" {
+  	step 1 emailUser "click on draft button"
+  	step 2 system "presents a list of auto saved messages"
+  	step 3 emailUser "selects one message" bs 2
+  }
+  alternative 2 "User cancel sending" {
+  	step 1 emailUser "selects cancel button"
+  	step 2 system "closes the email sending form"
+  } 
+  
+  exception 1 "User does not exist" {
+  	step 1 system "alerts that user does not exist" bs 3
+  }
+  exception 2 "Recipient field is empty" {
+  	step 1 system "alerts that recipient field is empty" bs 3
+  }
+  
+  postCondition "message is not held in the draft folder"
+}
+
